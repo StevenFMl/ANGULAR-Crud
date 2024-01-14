@@ -8,7 +8,7 @@ import { IProveedor } from '../Interfaces/iproveedor';
 })
 export class ProveedorService {
   private urlBase: string =
-    'http://localhost/Sexto_PHP_ANGULAR/Inventario/Controllers/Proveedor.Controller.php?op=';
+    'http://localhost/ANGULAR-Crud/Inventario/Controllers/Proveedor.Controller.php?op=';
   constructor(private clientePhp: HttpClient) {}
   todos(): Observable<IProveedor[]> {
     return this.clientePhp.get<IProveedor[]>(this.urlBase + 'todos');
