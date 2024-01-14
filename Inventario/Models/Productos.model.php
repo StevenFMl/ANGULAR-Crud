@@ -35,7 +35,7 @@ class Clase_Productos
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "INSERT INTO `Productos`( `Nombre`, `Precio`, `Cantidad`, `FechaIngreso`) VALUES ('$Nombre','$Precio',$Cantidad,CURDATE())";
+            $cadena = "INSERT INTO `productos`( `Nombre`, `Precio`, `Cantidad`, `FechaIngreso`) VALUES ('$Nombre','$Precio',$Cantidad,CURDATE())";
 
             $result = mysqli_query($con, $cadena);
 

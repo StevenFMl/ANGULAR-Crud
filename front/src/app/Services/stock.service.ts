@@ -15,34 +15,34 @@ export class StockService {
     return this.cliente.get<IStock[]>(this.urlBase + 'todos');
   }
   uno(id: number): Observable<IStock> {
-    var sotcks = new FormData();
-
-    return this.cliente.post<IStock>(this.urlBase + 'uno', sotcks);
+    var stock = new FormData();
+    stock.append('stockId', id.toString());
+    return this.cliente.post<IStock>(this.urlBase + 'uno', stock);
   }
 
-  insertar(proveedor: IStock): Observable<any> {
-    var prov = new FormData();
-    prov.append("ProductoId", proveedor.ProductoId.toString());
-    prov.append("ProveedorId", proveedor.ProveedorId.toString());
-    prov.append("Cantidad", proveedor.Precio_Venta.toString());
-    prov.append("Precio_Venta", proveedor.Cantidad.toString());
-
-    return this.cliente.post(this.urlBase + 'insertar', prov);
+  insertar(stocks: IStock): Observable<any> {
+    var stock = new FormData();
+    stock.append('productoId', stocks.ProductoId.toString());
+    stock.append('proveedorId',stocks.ProveedorId.toString());
+    stock.append('cantidad',stocks.Cantidad.toString());
+    stock.append('precio_Venta',stocks.Precio_Venta.toString());
+    console.log(stock);
+    return this.cliente.post(this.urlBase + 'insertar', stock);
 
   }
-  actualizar(proveedor: IStock): Observable<any> {
-    var prov = new FormData();
-    prov.append('id', proveedor.StockId.toString());
-    prov.append("ProductoId", proveedor.ProductoId.toString());
-    prov.append("ProveedorId", proveedor.ProveedorId.toString());
-    prov.append("Cantidad", proveedor.Precio_Venta.toString());
-    prov.append("Precio_Venta", proveedor.Cantidad.toString());
-    return this.cliente.post(this.urlBase + 'actualizar', prov);
+  actualizar(stocks: IStock, id:number): Observable<any> {
+    var stock = new FormData();
+    stock.append('stockId', id.toString());
+    stock.append('productoId', stocks.ProductoId.toString());
+    stock.append('proveedorId',stocks.ProveedorId.toString());
+    stock.append('cantidad',stocks.Cantidad.toString());
+    stock.append('precio_Venta',stocks.Precio_Venta.toString());
+    return this.cliente.post(this.urlBase + 'actualizar', stock);
   }
   eliminar(id: number): Observable<any> {
-    var prov = new FormData();
-    prov.append('id', id.toString());
-    return this.cliente.post(this.urlBase + 'eliminar', prov);
+    var stock = new FormData();
+    stock.append('stockId', id.toString());
+    return this.cliente.post(this.urlBase + 'eliminar', stock);
   }
 
 }

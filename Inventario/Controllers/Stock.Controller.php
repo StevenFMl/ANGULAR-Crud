@@ -45,7 +45,7 @@ switch ($_GET["op"]) {
         $Cantidad = $_POST["cantidad"];
         $Precio_Venta = $_POST["precio_Venta"];
         $datos = array(); //defino un arreglo
-        $datos = $stocks->actualizar($StockId, $ProductoId, $Nombre, $Precio, $cantidad); //llamo al modelo de usuarios e invoco al procedimiento actual
+        $datos = $stocks->actualizar($StockId, $ProductoId, $ProveedorId, $Cantidad,$Precio_Venta); //llamo al modelo de usuarios e invoco al procedimiento actual
         echo json_encode($datos); //devuelvo el arreglo en formato json
         break;
 
