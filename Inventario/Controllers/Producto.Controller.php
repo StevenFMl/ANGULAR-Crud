@@ -32,7 +32,6 @@ switch ($_GET["op"]) {
         $Nombre = $_POST["Nombre"];
         $Precio = $_POST["Precio"];
         $Cantidad = $_POST["Cantidad"];
-        $FechaIngreso = $_POST["FechaIngreso"];
         $datos = array(); //defino un arreglo
         $datos = $productos->insertar($Nombre, $Precio, $Cantidad); //llamo al modelo de usuarios e invoco al procedimiento insertar
         echo json_encode($datos); //devuelvo el arreglo en formato json
@@ -42,7 +41,6 @@ switch ($_GET["op"]) {
         $Nombre = $_POST["Nombre"];
         $Precio = $_POST["Precio"];
         $Cantidad = $_POST["Cantidad"];
-        $FechaIngreso = $_POST["FechaIngreso"];
         $datos = array(); //defino un arreglo
         $datos = $productos->actualizar($ProductoId, $Nombre, $Precio, $Cantidad); //llamo al modelo de usuarios e invoco al procedimiento actual
         echo json_encode($datos); //devuelvo el arreglo en formato json

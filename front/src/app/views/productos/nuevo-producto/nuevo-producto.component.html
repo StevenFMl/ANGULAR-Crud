@@ -37,18 +37,6 @@
         </div>
         }
       </div>
-      <div class="mb-2">
-        <label for="FechaIngreso">FechaIngreso</label>
-        <input type="text" class="form-control" formControlName="FechaIngreso" />
-        @if (producto.invalid && (producto.dirty || producto.touched)) {
-        <div class="alert">
-          @if (producto.errors?.["required"]) {
-          <div class="ng-invalid">La fecha de ingreso es requerida</div>
-         }
-        </div>
-        }
-
-      </div>
 
       <div class="mb-2">
         <button

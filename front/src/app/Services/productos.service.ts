@@ -24,7 +24,6 @@ export class ProductosService {
     prod.append('Nombre', producto.Nombre);
     prod.append('Precio', producto.Precio.toString());
     prod.append('Cantidad', producto.Cantidad.toString());
-    prod.append('FechaIngreso', producto.FechaIngreso.toString());
     return this.cliente.post(this.urlBase + 'insertar', prod);
   }
   actualizar(producto: IProductos, id: number): Observable<any> {
@@ -33,7 +32,6 @@ export class ProductosService {
     prod.append('Nombre', producto.Nombre);
     prod.append('Precio', producto.Precio.toString());
     prod.append('Cantidad', producto.Cantidad.toString());
-    prod.append('FechaIngreso', producto.FechaIngreso.toString());
     return this.cliente.post(this.urlBase + 'actualizar', prod);
   }
   eliminar(id: number): Observable<any> {

@@ -25,7 +25,6 @@ export class NuevoProductoComponent {
     Nombre: new FormControl('', Validators.required),
     Precio: new FormControl('', Validators.required),
     Cantidad: new FormControl('', Validators.required),
-    FechaIngreso: new FormControl('', Validators.required),
   });
   constructor(
     private productoServicio: ProductosService,
@@ -45,7 +44,6 @@ export class NuevoProductoComponent {
           Nombre: res.Nombre,
           Precio: res.Precio,
           Cantidad: res.Cantidad,
-          FechaIngreso: res.FechaIngreso,
         });
       });
     }
