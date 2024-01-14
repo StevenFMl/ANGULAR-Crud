@@ -5,7 +5,7 @@ class Clase_Conectar_Base_Datos
     protected $db;
     private $host = "localhost";  //192.168.100.103
     private $user = "root";
-    private $pass = " "; //esto es solo para MAMP  
+    private $pass = ""; //esto es solo para MAMP  
     /**
      * XAMPP  password = '';
      */
